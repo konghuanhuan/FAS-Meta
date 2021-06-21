@@ -1,5 +1,5 @@
 from DatasetsBox import test_dataset_loader
-
+import argparse
 import torch
 import FASNet
 import os
@@ -36,12 +36,20 @@ def model_test_csv(dataset_target, ModelHead_restore,ModelTail_restore,savename,
 
 if __name__ == '__main__':
     print('start')
-    imgroot = '/home/storage/storage48/data2/konglingmei/program/3DMaskDetect/datasets'
-    modelpath = '/home/storage/storage48/data2/konglingmei/program/3DMaskDetect/models/FASMeta/Train_20210621/snapshots/1463'
+    parser = argparse.ArgumentParser(description="FAS_Meta_test")
+    parser.add_argument('--imgroot', type=str,
+                        default='/home/storage/storage48/data2/konglingmei/program/3DMaskDetect/datasets')
+    parser.add_argument('--modelpath', type=str, default='/home/storage/storage48/data2/konglingmei/program/3DMaskDetect/models/FASMeta/Train_20210621')
+    parser.add_argument('--savepath', type=str,default='./results')
+    args = parser.parse_args()
+
+    savepath = args.savepath
+    imgroot = args.imgroot
+    modelpath = os.path.join(args.modelpath, 'snapshots/1463')
     prefix = '-80.pt'
     ModelHead_restore = os.path.join(modelpath,'ModelHead-{}.pt'.format(prefix))
     ModelTail_restore = os.path.join(modelpath,'ModelTail-{}.pt'.format(prefix))
-    savepath = './results'
+    # savepath = './results'
     if not os.path.exists(savepath):
         os.mkdir(savepath)
     dataset_target = 'val'

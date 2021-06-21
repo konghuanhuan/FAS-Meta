@@ -10,7 +10,7 @@ pytorch==1.5.0
 
 the face detector results in csv. if some photo not in csvfiles, that is to say there is no face in this photo, and when test, the no face photo scores 0.0.
 
-ps: tainData:1 4 6 represent Scene，and it can be seen in traindata name. train dirname is Skin_Subject_Type_Scene_Light_Sensor,the 4rd is the split basic。for example，dirname 3_81_1_1_1_3 is labled in Scene 1.
+ps: tainData:1 4 6 represent Scene，and it can be seen in traindata name. train dirname is Skin_Subject_Type_Scene_Light_Sensor,the 4rd is the split basic。for example，dirname 3_26_3_1_6_3 is labled in Scene 1.
 
 ## train
 

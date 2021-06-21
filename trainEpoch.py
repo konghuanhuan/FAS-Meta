@@ -6,6 +6,7 @@ import torch.optim as optim
 from torch import nn
 from torch.nn import DataParallel
 import random
+import time
 
 def get_inf_iterator(data_loader):
     """Inf data iterator."""
@@ -40,7 +41,7 @@ def Train(args, HeadModel, TailModel,
     ModelHeadName = ''
     ModelTailName = ''
     for epoch in range(args.epochs):
-
+        print('epoch: %d/%d'%(epoch,args.epochs))
         data1_real = get_inf_iterator(data_loader1_real)
         data1_fake = get_inf_iterator(data_loader1_fake)
         data2_real = get_inf_iterator(data_loader2_real)
@@ -136,10 +137,11 @@ def Train(args, HeadModel, TailModel,
             global_step += 1
 
             if (step + 1) % args.show_step == 0:
-                print('Loss_meta_train: %.8f'%(Loss_meta_train.item()))
-                print('Loss_meta_test: %.8f' % (Loss_meta_test.item()))
-                print('Loss_cls_train: %.8f' % (Loss_cls_train.item()))
-                print('Loss_cls_test: %.8f' % (Loss_cls_test.item()))
+                print(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+                print('Loss_meta_train: %.8f'%(Loss_meta_train.item()),
+                     'Loss_meta_test: %.8f' % (Loss_meta_test.item()),
+                     'Loss_cls_train: %.8f' % (Loss_cls_train.item()),
+                     'Loss_cls_test: %.8f' % (Loss_cls_test.item()))
 
         # save model parameters #
         if (epoch + 1) % args.model_save_epoch == 0:

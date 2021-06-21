@@ -21,6 +21,6 @@ python trainFASMeta.py --imgroot your_image_root_path_before_(train) --results_p
 python testFASMeta.py --imgroot your_image_root_path_before_(test val) --modelpath your_model_trainedpath --savepath results_save_path
 
 
-reference
-https://github.com/HWT-WalterHu/AAAI2020-RFMetaFAS
+## reference
+https://github.com/rshaojimmy/AAAI2020-RFMetaFAS
 

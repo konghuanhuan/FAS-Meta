@@ -16,7 +16,7 @@ the face detector results in csv. if some photo not in csvfiles, that is to say 
 
 train data: ./csv/1/* ./csv/4/* ./csv/6/*
 
-1 4 6 represent Scene，and it can be seen in traindata name. train dirname is Skin_Subject_Type_Scene_Light_Sensor,the 4rd is the split basic。for example，dirname 3_26_3_1_6_3 is labled in Scene 1. csv file contains 3 columns，path,box,label。path is image name(beigin from train,for example：train/3_81_1_1_1_3/0007.png)，box is face detect result（[xmin,ymin,xmax,ymax],for example："[215,322,908,1188]"），label is live face or not(0 is fake, 1 is real).
+1 4 6 represent Scene，and it can be seen in traindata name. train dirname is Skin_Subject_Type_Scene_Light_Sensor,the 4rd is the split basic。for example，dirname 3_26_3_1_6_3 is labled in Scene 1. csv file contains 3 columns，path,box,label。path is image name(beigin from train,for example：train/3_81_1_1_1_3/0007.png)，box is face detect result（[xmin,ymin,xmax,ymax],for example："[215,322,908,1188]"），label represent live face or not(0 is fake, 1 is real).
 
 val data: ./csv/val/*
 csv file contains 2 columns，path,box。path is image name(beigin from val,for example：val/0000/0001.png)，box is face detect result.

@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
     levels = [0, 1, 2]
     # epochs = [80, 60, 50]
-    epochs = [80, 80, 80]
+    epochs = [80, 60, 50]
 
     ModelHeadName = ''
     ModelTailName = ''

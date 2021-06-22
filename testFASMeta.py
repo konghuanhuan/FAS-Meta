@@ -45,8 +45,8 @@ if __name__ == '__main__':
 
     savepath = args.savepath
     imgroot = args.imgroot
-    modelpath = os.path.join(args.modelpath, 'snapshots/1463')
-    prefix = '-80.pt'
+    modelpath = os.path.join(args.modelpath, 'snapshots/1462')
+    prefix = '-50.pt'
     ModelHead_restore = os.path.join(modelpath,'ModelHead-{}.pt'.format(prefix))
     ModelTail_restore = os.path.join(modelpath,'ModelTail-{}.pt'.format(prefix))
     # savepath = './results'

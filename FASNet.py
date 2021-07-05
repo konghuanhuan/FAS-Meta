@@ -203,7 +203,7 @@ def init_model(net, restore, parallel_reload=True):
     """Init models with cuda and weights."""
     net.apply(weights_init_xavier)
 
-    if restore is not None and os.path.exists(restore):
+    if restore is not None:
         print("*************Restore model from: {}".format(os.path.abspath(restore)))
         state_dict = torch.load(restore)
         from collections import OrderedDict
